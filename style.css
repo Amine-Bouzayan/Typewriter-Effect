@@ -1,0 +1,59 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+
+body {
+      font-family: 'Aref Ruqaa', serif;
+      overflow-y: hidden;
+}
+
+section {
+      position: relative;
+      min-height: 100vh;
+      background: url(./dist/bg-page.jpg);
+      background-size: cover;
+}
+
+div.overlay {
+      position: absolute;
+      width: 100%;
+      min-height: 100%;
+      background: rgba(0, 0, 0, .3);
+      display: flex;
+      justify-content: right;
+      align-items: center;
+}
+
+[data-type-writer] {
+      text-align: right;
+      width: 65%;
+      margin-right: 3rem;
+      font-size: 5rem;
+}
+
+[data-type-writer]::after {
+      content: '';
+      border-right: 1px solid black;
+      animation: blink 500ms infinite ease-in-out;
+}
+
+@keyframes blink {
+      0% {
+            opacity: 0;
+      }
+
+      100% {
+            opacity: 1;
+      }
+}
+
+@media (max-width: 900px) {
+      div.overlay {
+            align-items: flex-start;
+      }
+      [data-type-writer] {
+            font-size: 4rem;
+      }      
+}
