@@ -6,36 +6,39 @@
 
 body {
       font-family: 'Aref Ruqaa', serif;
-      overflow-y: hidden;
+      overflow: hidden;
 }
 
 section {
-      position: relative;
       min-height: 100vh;
       background-image: url(../img/bg-page.jpg);
       background-size: cover;
 }
 
 div.overlay {
-      position: absolute;
       width: 100%;
-      min-height: 100%;
+      min-height: 100vh;
       background: rgba(0, 0, 0, .3);
       display: flex;
       justify-content: right;
       align-items: center;
+      padding: 0 3rem 0 25rem;
 }
 
 [data-type-writer] {
       text-align: right;
-      width: 65%;
-      margin-right: 3rem;
       font-size: 5rem;
+      position: relative;
 }
 
 [data-type-writer]::after {
       content: '';
-      border-right: 1px solid black;
+      position: absolute;
+      left: -22px;
+      bottom: 22px;
+      width: 1px;
+      height: 50px;
+      border-right: 2px solid black;
       animation: blink 500ms infinite ease-in-out;
 }
 
@@ -51,9 +54,10 @@ div.overlay {
 
 @media (max-width: 900px) {
       div.overlay {
+            padding: 0 10px 0 100px;
             align-items: flex-start;
       }
       [data-type-writer] {
             font-size: 4rem;
-      }      
+      }
 }
